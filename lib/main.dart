@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      // color: Color.fromARGB(255, 238, 230, 230),
       debugShowCheckedModeBanner: false,
       title: 'Football App',
       theme: ThemeData(primarySwatch: Colors.blue),

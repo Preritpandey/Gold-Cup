@@ -3,18 +3,43 @@ import 'package:get/get.dart';
 import 'package:gold_cup/app/views/calendar_view.dart';
 import 'package:gold_cup/app/views/live_match.dart';
 import 'package:gold_cup/app/views/news_view.dart';
+import 'package:gold_cup/app/widgets/live_match_card.dart';
 import 'package:gold_cup/app/widgets/match_card.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends StatelessWidget {
   final HomeController controller = Get.put(HomeController());
 
-   HomeView({super.key});
+  HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Obx(() => Scaffold(
-          appBar: AppBar(title: const Text('Gold Cup')),
+          backgroundColor: const Color.fromARGB(255, 238, 230, 230),
+          appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 238, 230, 230),
+            leading: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.menu,
+                  color: Color.fromARGB(200, 21, 20, 41),
+                )),
+            actions: [
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.search,
+                    color: Color.fromARGB(200, 21, 20, 41),
+                  ))
+            ],
+            centerTitle: true,
+            title: Text('Gold Cup',
+                style: GoogleFonts.poppins(
+                    color: const Color.fromARGB(200, 21, 20, 41),
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold)),
+          ),
           body: IndexedStack(
             index: controller.selectedIndex.value,
             children: [
@@ -58,12 +83,13 @@ class HomeView extends StatelessWidget {
 class HomeContent extends StatelessWidget {
   final HomeController controller = Get.find<HomeController>();
 
-   HomeContent({super.key});
+  HomeContent({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Teams List (Scrollable Horizontally)
           Padding(
@@ -119,11 +145,13 @@ class HomeContent extends StatelessWidget {
               ],
             ),
           ),
-          Obx(() => controller.liveMatch.isNotEmpty
-              ? MatchCard(match: controller.liveMatch, isLive: true)
-              : const Text("No live matches currently",
-                  style: TextStyle(color: Colors.grey))),
-
+          // Obx(() => controller.liveMatch.isNotEmpty
+          //     ? Expanded(child: LiveMatchList())
+          //     : const Text("No live matches currently",
+          //         style: TextStyle(color: Colors.grey)))
+          //
+          // ,
+          LiveMatchList(),
           // Upcoming Matches
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
