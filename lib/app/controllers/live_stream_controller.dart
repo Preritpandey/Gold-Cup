@@ -15,7 +15,7 @@ class LiveStreamController extends GetxController {
     'time': '45:12',
     'venue': 'Old Trafford',
     'stream_url':
-        'https://www.youtube.com/watch?v=CgyOfJKssdc', // Replace with actual live stream URL
+        'https://www.youtube.com/watch?v=lKYqE14kWkk', // Replace with actual live stream URL
   };
 
   void initializePlayer() {
