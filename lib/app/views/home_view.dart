@@ -18,7 +18,7 @@ class HomeView extends StatelessWidget {
     return Obx(() => Scaffold(
           backgroundColor: const Color.fromARGB(255, 238, 230, 230),
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 238, 230, 230),
+            backgroundColor: const Color.fromARGB(255, 238, 230, 230),
             leading: IconButton(
                 onPressed: () {},
                 icon: const Icon(
@@ -54,24 +54,38 @@ class HomeView extends StatelessWidget {
             onTap: (index) {
               controller.selectedIndex.value = index;
             },
-            items: const [
+            items: [
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.home,
-                    color: Colors.black,
+                    color: controller.selectedIndex.value == 0
+                        ? Colors.black
+                        : Colors.grey,
                   ),
                   label: 'Home'),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.article,
-                    color: Colors.black,
+                    color: controller.selectedIndex.value == 1
+                        ? Colors.black
+                        : Colors.grey,
                   ),
                   label: 'News'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.calendar_today, color: Colors.black),
+                  icon: Icon(
+                    Icons.calendar_today,
+                    color: controller.selectedIndex.value == 2
+                        ? Colors.black
+                        : Colors.grey,
+                  ),
                   label: 'Calendar'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.live_tv, color: Colors.black),
+                  icon: Icon(
+                    Icons.live_tv,
+                    color: controller.selectedIndex.value == 3
+                        ? Colors.black
+                        : Colors.grey.shade700,
+                  ),
                   label: 'Live'),
             ],
           ),
@@ -145,12 +159,6 @@ class HomeContent extends StatelessWidget {
               ],
             ),
           ),
-          // Obx(() => controller.liveMatch.isNotEmpty
-          //     ? Expanded(child: LiveMatchList())
-          //     : const Text("No live matches currently",
-          //         style: TextStyle(color: Colors.grey)))
-          //
-          // ,
           LiveMatchList(),
           // Upcoming Matches
           Padding(
