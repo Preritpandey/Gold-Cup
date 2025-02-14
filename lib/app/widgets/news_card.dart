@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NewsCard extends StatelessWidget {
   final String image;
-  final String category;
+  final String description;
   final String title;
 
-   NewsCard({required this.image, required this.category, required this.title});
+  NewsCard(
+      {required this.image, required this.description, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -33,15 +35,18 @@ class NewsCard extends StatelessWidget {
                   CrossAxisAlignment.start, // Align text to the start
               children: [
                 Text(
-                  category,
-                  style:const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  title,
+                  style:
+                  
+                   const TextStyle(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis, // Truncate if too long
                 ),
                 const SizedBox(height: 5), // Spacing between category and title
                 Text(
-                  title,
-                  style:const TextStyle(fontSize: 13),
+                  description,
+                  style: const TextStyle(fontSize: 13),
                   maxLines: 2, // Allows up to 2 lines before truncation
                   overflow: TextOverflow.ellipsis,
                 ),

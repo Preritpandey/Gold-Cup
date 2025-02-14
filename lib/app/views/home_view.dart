@@ -107,16 +107,22 @@ class HomeContent extends StatelessWidget {
         children: [
           // Teams List (Scrollable Horizontally)
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.015,
+                vertical: MediaQuery.of(context).size.height * 0.012),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Teams',
-                    style:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 10),
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.012),
+                  child: Text('Teams',
+                      style: GoogleFonts.poppins(
+                          fontSize: 18, fontWeight: FontWeight.bold)),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.015),
                 SizedBox(
-                  height: 80,
+                  height: MediaQuery.of(context).size.height * 0.1,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: controller.teams.length,

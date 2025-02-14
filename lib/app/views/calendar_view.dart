@@ -11,13 +11,13 @@ class CalendarView extends StatelessWidget {
 
 class MostGoalsPage extends StatelessWidget {
   final List<Map<String, dynamic>> players = [
-    {"name": "Darwin Núñez", "club": "Liverpool", "goals": 14},
-    {"name": "Mykhailo Mudryk", "club": "Chelsea", "goals": 11},
-    {"name": "Bukayo Saka", "club": "Arsenal", "goals": 10},
-    {"name": "Antony Santos", "club": "Manchester United", "goals": 9},
-    {"name": "Son Heun-min", "club": "Tottenham", "goals": 9},
-    {"name": "Erling Haaland", "club": "Manchester City", "goals": 6},
-    {"name": "Jarrod Bowen", "club": "West Ham", "goals": 5},
+    {"name": "Anjan Bista", "club": "Machhindra FC", "goals": 14},
+    {"name": "Manish Dangi", "club": "APF FC", "goals": 11},
+    {"name": "Kiran Chemjong", "club": "Church Boys", "goals": 10},
+    {"name": "Rohit Chand", "club": "Shena", "goals": 9},
+    {"name": "Ayush Ghalan", "club": "NRT", "goals": 9},
+    {"name": "Gillespye Jung", "club": "Church Boys City", "goals": 6},
+    {"name": "Sanjeeb Bista", "club": "NRT", "goals": 5},
   ];
 
   @override
@@ -62,12 +62,12 @@ class MostGoalsPage extends StatelessWidget {
                         Text("1",
                             style:
                                 TextStyle(fontSize: 24, color: Colors.white)),
-                        Text("Harry Maguire",
+                        Text("Anant tamang",
                             style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold)),
-                        Text("Manchester United",
+                        Text("Machhindra FC",
                             style: TextStyle(color: Colors.white70)),
                         Text("18",
                             style: TextStyle(
@@ -78,7 +78,7 @@ class MostGoalsPage extends StatelessWidget {
                     ),
                   ),
                   Image.network(
-                    'https://upload.wikimedia.org/wikipedia/commons/5/59/Harry_Maguire_2018.jpg',
+                    'https://mhendolafole.org/wp-content/uploads/elementor/thumbs/anant-tamang-qrc0jpycv0xuofsfspurkgx9mlcxdatcy73n6ih0ug.jpg',
                     height: 100,
                     width: 80,
                     fit: BoxFit.cover,
