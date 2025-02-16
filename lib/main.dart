@@ -3,14 +3,15 @@ import 'package:get/get.dart';
 import 'package:gold_cup/app/routes/app_pages.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // color: Color.fromARGB(255, 238, 230, 230),
       debugShowCheckedModeBanner: false,
       title: 'Football App',
       theme: ThemeData(primarySwatch: Colors.blue),

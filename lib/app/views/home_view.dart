@@ -113,13 +113,9 @@ class HomeContent extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width * 0.012),
-                  child: Text('Teams',
-                      style: GoogleFonts.poppins(
-                          fontSize: 18, fontWeight: FontWeight.bold)),
-                ),
+                Text('Teams',
+                    style: GoogleFonts.poppins(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.015),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.1,
@@ -165,7 +161,11 @@ class HomeContent extends StatelessWidget {
               ],
             ),
           ),
-          LiveMatchList(),
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.014),
+            child: LiveMatchList(),
+          ),
           // Upcoming Matches
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TopScorerCard extends StatelessWidget {
   final Map scorer;
-  TopScorerCard({required this.scorer});
+  const TopScorerCard({super.key, required this.scorer});
 
   @override
   Widget build(BuildContext context) {

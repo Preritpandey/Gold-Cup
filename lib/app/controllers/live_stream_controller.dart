@@ -28,9 +28,9 @@ class LiveStreamController extends GetxController {
         flags: const YoutubePlayerFlags(
           autoPlay: true,
           mute: false,
-          enableCaption: true,
+          enableCaption: false,
           isLive: true, // Enable live stream mode
-          forceHD: true, // Force HD quality when available
+          forceHD: false, // Force HD quality when available
         ),
       );
 

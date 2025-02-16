@@ -19,7 +19,9 @@ class LiveMatchList extends StatelessWidget {
           return SizedBox(
             width: MediaQuery.of(context).size.width * 0.75,
             child: Padding(
-              padding: const EdgeInsets.all(8),
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.001,
+              ),
               child: ClipPath(
                 clipper: CustomCardClipper(),
                 child: Container(

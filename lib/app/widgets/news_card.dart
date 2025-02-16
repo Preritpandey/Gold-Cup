@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NewsCard extends StatelessWidget {
   final String image;
   final String description;
   final String title;
 
-  NewsCard(
-      {required this.image, required this.description, required this.title});
+   const NewsCard(
+      {super.key, required this.image, required this.description, required this.title});
 
   @override
   Widget build(BuildContext context) {
